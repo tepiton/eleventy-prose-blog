@@ -11,13 +11,14 @@
 	--sans-serif-features: "onum", "ss04", "xs06", "ss08", "ss11", "xs14";
 
 	/* Light theme (default) */
-	--color-bg: #eeede9;
-	--color-text: #1c1a18;
-	--color-muted: #6d685f;
-	--color-link: #8d3f2b;
-	--color-link-hover: #5f2418;
-	--color-link-visited: #6b3060;
-	--color-border: #d6d0c6;
+	--color-bg: #e6e6e6;
+	--color-text: #333;
+	--color-muted: #888;
+	--color-heading: #B92929;
+	--color-link: #082840;
+	--color-link-hover: #5f2b48;
+	--color-link-visited: #17050F;
+	--color-border: #c8c5c5;
 	--color-code-bg: rgba(0, 0, 0, 0.06);
 	--color-table-stripe: rgba(0, 0, 0, 0.04);
 	--measure: min(90%, 40rem);
@@ -30,10 +31,11 @@
 	:root {
 		--color-bg: #1a1d23;
 		--color-text: #dad8d8;
-		--color-muted: #888;
-		--color-link: #66b3ff;
-		--color-link-hover: #4da6ff;
-		--color-link-visited: #9999ff;
+		--color-muted: #666;
+		--color-heading: #B92929;
+		--color-link: #B92929;
+		--color-link-hover: #B92929;
+		--color-link-visited: #B92929;
 		--color-border: #333;
 		--color-code-bg: rgba(255, 255, 255, 0.08);
 		--color-table-stripe: rgba(255, 255, 255, 0.04);
@@ -43,13 +45,14 @@
 /* User preference overrides */
 html[data-force-theme="light"],
 body.light-mode {
-	--color-bg: #eeede9;
-	--color-text: #1c1a18;
-	--color-muted: #6d685f;
-	--color-link: #8d3f2b;
-	--color-link-hover: #5f2418;
-	--color-link-visited: #6b3060;
-	--color-border: #d6d0c6;
+	--color-bg: #e6e6e6;
+	--color-text: #333;
+	--color-muted: #888;
+	--color-heading: #B92929;
+	--color-link: #082840;
+	--color-link-hover: #5f2b48;
+	--color-link-visited: #17050F;
+	--color-border: #c8c5c5;
 	--color-code-bg: rgba(0, 0, 0, 0.06);
 	--color-table-stripe: rgba(0, 0, 0, 0.04);
 }
@@ -58,10 +61,11 @@ html[data-force-theme="dark"],
 body.dark-mode {
 	--color-bg: #1a1d23;
 	--color-text: #dad8d8;
-	--color-muted: #888;
-	--color-link: #66b3ff;
-	--color-link-hover: #4da6ff;
-	--color-link-visited: #9999ff;
+	--color-muted: #666;
+	--color-heading: #B92929;
+	--color-link: #B92929;
+	--color-link-hover: #B92929;
+	--color-link-visited: #B92929;
 	--color-border: #333;
 	--color-code-bg: rgba(255, 255, 255, 0.08);
 	--color-table-stripe: rgba(255, 255, 255, 0.04);
@@ -181,6 +185,7 @@ footer p {
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-heading);
 	font-feature-settings: var(--sans-serif-features);
+	color: var(--color-heading);
 	line-height: 1.2;
 	margin-top: 1.75em;
 	margin-bottom: 0.5em;

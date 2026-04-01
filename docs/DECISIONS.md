@@ -24,7 +24,25 @@
 
 ---
 
-## DEC-004: No mermaid support
+## DEC-004: Original color scheme retained
+
+**Decision**: Keep the original pborenstein.com color scheme — red headings (#B92929), dark navy links (#082840 light / #B92929 dark), gray background (#e6e6e6 light / #1a1d23 dark).
+
+**Why**: This is the site's distinctive visual identity. The .dev warm gray / rust color scheme belongs to the dev blog. These are sibling sites in the same template family but with intentionally different characters.
+
+Note: CSS variable names were unified (`--color-heading`, `--color-link`, etc.) but the values remain site-specific.
+
+---
+
+## DEC-005: markdown-it breaks: true (markdown linebreaks honored)
+
+**Decision**: Keep `breaks: true` in markdown-it config.
+
+**Why**: pborenstein.com prose content was written with single linebreaks used intentionally. `breaks: false` is the template family default but does not suit this site's content.
+
+---
+
+## DEC-007: No mermaid support
 
 **Decision**: Did not add mermaid diagram support.
 

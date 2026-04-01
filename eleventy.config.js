@@ -193,7 +193,7 @@ eleventyConfig.addFilter("separateFootnotes", function(content) {
 	eleventyConfig.amendLibrary("md",
 		(md) => md.use(markdownFootnote)
 							.set({ typographer: true,
-								     breaks: false
+								     breaks: true
 							 })
 	);
 

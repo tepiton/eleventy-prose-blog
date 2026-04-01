@@ -8,7 +8,7 @@ import jsdom from "jsdom";
 const { JSDOM } = jsdom;
 
 import pluginFilters from "./_config/filters.js";
-import metadata from "./_data/metadata.js";
+import metadata from "./content/_data/metadata.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
@@ -193,7 +193,7 @@ eleventyConfig.addFilter("separateFootnotes", function(content) {
 	eleventyConfig.amendLibrary("md",
 		(md) => md.use(markdownFootnote)
 							.set({ typographer: true,
-								     breaks: true
+								     breaks: false
 							 })
 	);
 
@@ -236,7 +236,7 @@ export const config = {
 	dir: {
 		input: "content",          // default: "."
 		includes: "../_includes",  // default: "_includes" (`input` relative)
-		data: "../_data",          // default: "_data" (`input` relative)
+		data: "_data",             // default: "_data" (`input` relative)
 		output: "_site"
 	}
 };

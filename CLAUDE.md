@@ -40,13 +40,13 @@ npm run benchmark
 - **Input directory**: `content/` (configured in eleventy.config.js)
 - **Output directory**: `_site/`
 - **Templates**: `_includes/layouts/` (Nunjucks .njk files)
-- **Data**: `_data/` (global data files)
+- **Data**: `content/_data/` (global data files — note: inside the input directory)
 - **Config**: `_config/` (filters and other configuration)
 - **Assets**: `public/` (copied to root), `css/`, `js/`
 
 ### Key Configuration
 - **Main config**: `eleventy.config.js` - ES modules, plugins, filters, and build settings
-- **Site metadata**: `_data/metadata.js` - centralized site information, author details, feed config
+- **Site metadata**: `content/_data/metadata.js` - centralized site information, author details, feed config
 - **Filters**: `_config/filters.js` - date formatting, array manipulation, tag filtering
 
 ### Template System
@@ -82,7 +82,9 @@ npm run benchmark
 - **Node requirement**: >=18 (specified in package.json)
 - **Module system**: ES modules throughout (type: "module" in package.json)
 - **Development server**: Shows all network interfaces for device testing
-- **Font loading**: Adobe Typekit fonts (neue-kabel, p22-stickley-pro-text)
+- **Font loading**: Adobe Typekit fonts (neue-kabel, p22-stickley-pro-text) loaded via `<link rel="stylesheet">` tags in `base.njk` under a `<!-- fonts: swap these links -->` comment
+- **Dev server port**: 8089 (`npm start`)
+- **CSS variables**: Uses unified naming convention (`--color-bg`, `--color-text`, `--font-body`, etc.) matching pborenstein.dev — font swap is 2 `<link>` tags + 3 CSS vars
 
 ---
 

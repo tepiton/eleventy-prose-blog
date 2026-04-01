@@ -1,12 +1,12 @@
 ---
 phase: 1
-updated: 2026-03-31
-last_commit: 4d3a20c
+updated: 2026-04-01
+last_commit: 6f64e25
 ---
 
 # Current Focus
 
-Design polish: muted text contrast, measure for prose reading.
+Repo renamed from pborenstein.com to eleventy-prose-blog. README rewritten as a generic template README.
 
 ## Active Tasks
 
@@ -15,6 +15,7 @@ Design polish: muted text contrast, measure for prose reading.
 - [x] Restore breaks: true
 - [x] Tune --color-muted: #777 light / #aaa dark
 - [x] Set measure to min(90%, 60ch)
+- [x] Rename repo to eleventy-prose-blog; write template README
 
 ## Context
 
@@ -22,7 +23,7 @@ Design polish: muted text contrast, measure for prose reading.
 - --color-muted: #777 light, #aaa dark (tuned for contrast on both backgrounds)
 - measure: min(90%, 60ch) — ch-based for prose serif readability
 - breaks: true — prose content uses single linebreaks intentionally
-- No mermaid
+- No mermaid; this is the prose counterpart to eleventy-tech-blog
 
 ## Next Session
 

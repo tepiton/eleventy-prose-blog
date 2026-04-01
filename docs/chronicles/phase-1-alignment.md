@@ -28,3 +28,15 @@
 **How**: `--color-muted`: #777 light / #aaa dark. `--measure`: min(90%, 60ch).
 
 **Files**: `css/index.css`
+
+---
+
+## Entry 3 — Repo renamed to eleventy-prose-blog — 2026-04-01
+
+**What**: Renamed directory from `pborenstein.com` to `eleventy-prose-blog`. Rewrote README as a generic template README.
+
+**Why**: Making this a distributable template in the eleventy- family alongside eleventy-chapbook, eleventy-folio, eleventy-pamphlet, and the new eleventy-tech-blog.
+
+**How**: Directory rename; README rewritten following the pattern of the other eleventy- template READMEs (quick start, customization, structure, npm scripts, features, deploy).
+
+**Files**: `README.md`

@@ -1,100 +1,131 @@
-# pborenstein.com
+# eleventy-prose-blog
 
-Philip Borenstein's personal blog built with Eleventy (11ty) v3.1.0.
+An Eleventy v3 starter for personal prose blogs. Designed for writers who want a polished reading experience: footnote popovers, light/dark theming, RSS feeds, and image optimization.
+
+## Quick start
+
+```
+git clone <this-repo> my-project
+cd my-project
+npm install
+npm run start
+```
+
+Then open `http://localhost:8089`.
+
+## Customization
+
+### Site metadata
+
+Edit `content/_data/metadata.js`:
+
+```js
+export default {
+  title: "Your Blog",
+  siteName: "yoursite.com",
+  url: "https://example.com/",
+  language: "en",
+  description: "A description of your blog.",
+  author: {
+    name: "Your Name",
+    email: "you@example.com",
+    url: "https://example.com/about/",
+  },
+}
+```
+
+Note: `metadata.js` lives inside `content/_data/` so the entire `content/` directory is self-contained and portable.
+
+### Writing posts
+
+Add Markdown files to `content/posts/`. Each post needs front matter:
+
+```yaml
+---
+title: The Title of This Post
+date: 2025-01-15
+tags:
+  - writing
+  - topic
+description: Optional. Used in the HTML meta description and feed.
+---
+```
+
+- `date` controls sort order
+- `tags` generate automatic tag pages
+- Add `draft: true` to exclude from production builds
+
+### Footnotes
+
+Footnotes render as interactive in-place popovers. Write standard Markdown footnotes:
+
+```markdown
+This sentence has a footnote.[^1]
+
+[^1]: The footnote content appears in a popover on click.
+```
+
+Popovers appear above the reference on desktop and as a fixed bottom panel on mobile. Falls back to traditional footnotes without JavaScript.
+
+### Themes
+
+The site supports light, dark, and system-preference modes. Users switch via the header dropdown; preference is persisted in localStorage.
+
+Colors and fonts are CSS custom properties at the top of `css/index.css`:
+
+```css
+:root {
+  --font-body: p22-stickley-pro-text, neue-kabel, Palatino, Georgia, serif;
+  --font-heading: neue-kabel, 'Gill Sans', 'Helvetica Neue', sans-serif;
+  --color-bg: #fffff8;
+  --color-text: #1a1a18;
+}
+```
+
+**Adobe Fonts (Typekit):** This template uses `p22-stickley-pro-text` and `neue-kabel`. The kit IDs are baked into `_includes/layouts/base.njk` under a `<!-- fonts: swap these links -->` comment. To use different fonts, replace the Typekit `<link>` tags and update the CSS variables.
+
+## Project structure
+
+```
+content/
+  _data/
+    metadata.js              # Title, author, URL, feed config
+  posts/
+    my-first-post.md
+    ...
+  pages/                     # Static pages (About, etc.)
+_includes/
+  layouts/
+    base.njk                 # HTML shell with theme switcher
+    post.njk                 # Post layout with footnote support
+_config/
+  filters.js                 # Date formatting, tag filtering
+css/
+  index.css                  # All styles, theme variables
+js/
+  theme-switcher.js          # Theme persistence
+  footnote-interactions.js   # Popover logic
+```
+
+## npm scripts
+
+| Command | Description |
+|:--------|:------------|
+| `npm run start` | Dev server at `0.0.0.0:8089` with live reload |
+| `npm run build` | Production build to `_site/` |
+| `npm run debug` | Build with Eleventy debug output |
+| `npm run benchmark` | Performance benchmarking |
 
 ## Features
 
-- **Static Site Generation**: Fast, secure static site with Eleventy and Nunjucks templating
-- **Interactive Footnotes**: In-place popovers that appear on click without breaking reading flow
-- **Theme System**: Light/dark/system preference themes with CSS variables
-- **Typography**: Adobe Typekit fonts (neue-kabel, p22-stickley-pro-text) with OpenType features
-- **Content Management**: Markdown posts with front matter, tags, and automatic page generation
-- **Performance**: Image optimization (AVIF/WebP), lazy loading, and optimized builds
-- **Feeds**: RSS/Atom feeds with custom XSL styling
-- **Mobile Responsive**: Touch-optimized interactions and responsive design
-- **Accessibility**: ARIA support, keyboard navigation, and screen reader compatibility
+- **Footnote popovers** — in-place popover system with smart viewport positioning, falls back gracefully
+- **Theme switching** — light, dark, system preference, persisted in localStorage
+- **RSS/Atom feeds** — with custom XSL styling
+- **Image optimization** — automatic AVIF/WebP generation with lazy loading
+- **Syntax highlighting** — PrismJS
+- **Tag pages** — automatic generation from post front matter
+- **Drafts** — excluded from production builds via `draft: true`
 
-## Development
+## Deploy
 
-### Prerequisites
-
-- Node.js >= 18
-- npm
-
-### Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm start
-
-# Build for production
-npm run build
-```
-
-### Available Commands
-
-- `npm start` - Development server with hot reload
-- `npm run build` - Production build
-- `npm run build-nocolor` - Build without colors (CI-friendly)
-- `npm run debug` - Debug build with verbose logging
-- `npm run debugstart` - Debug development server
-- `npm run benchmark` - Performance benchmarking
-
-## Architecture
-
-### Directory Structure
-
-```
-content/          # Markdown content (posts, pages)
-_includes/        # Nunjucks templates and layouts
-_data/           # Global data files
-_config/         # Eleventy configuration modules
-css/             # Stylesheets
-js/              # JavaScript modules
-public/          # Static assets (copied to root)
-_site/           # Generated output directory
-```
-
-### Key Technologies
-
-- **Eleventy 3.1.0**: Static site generator with ES modules
-- **Nunjucks**: Template engine for layouts and includes
-- **markdown-it**: Markdown processing with footnote support
-- **PrismJS**: Syntax highlighting for code blocks
-- **JSDOM**: Server-side DOM manipulation for content enhancement
-
-### Content System
-
-- **Posts**: `content/posts/` with front matter and Markdown
-- **Pages**: `content/pages/` for static content
-- **Tags**: Automatic tag page generation
-- **Drafts**: Excluded from production builds with `draft: true`
-
-### Interactive Features
-
-#### Footnote Popovers
-- Click footnote references to show content in positioned popovers
-- Smart positioning adapts to viewport constraints
-- Responsive arrows point toward footnote references
-- Mobile-optimized with bottom positioning
-- Falls back to traditional footnotes without JavaScript
-
-#### Theme Switching
-- Light, dark, and system preference modes
-- CSS custom properties for consistent theming
-- Persistent user preference with localStorage
-- Automatic system preference detection
-
-## Browser Support
-
-- Modern browsers with ES6 module support
-- Progressive enhancement ensures core functionality without JavaScript
-- Optimized for mobile devices including iPad Safari
-- Accessibility tested with screen readers
-
-## License
-
-Personal blog content and code. See individual files for licensing details.
+Netlify and Vercel config files are included. For GitHub Pages, add a `.github/workflows/pages.yml` build workflow.

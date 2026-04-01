@@ -1,0 +1,38 @@
+---
+title: Botch
+date: 2023-09-22T21:36:20.787Z
+draftDate: 2023-03-23T05:08:10.237Z
+description: "So what did you do before you were a bartender?"
+tags:
+  - fiction
+  - surgery
+  - incontinence
+---
+
+--- So, what did you do before this?
+--- I was a surgeon.
+--- No shit?
+--- No shit.
+--- How do you go from being a surgeon to doing this?
+--- How did I fall so low?
+--- Sorry, I--
+--- Nah, don't worry about it. OK. I'll tell you. So, one day, I'm having lunch with one of my old professors. Guy practically mentored me through med school. And you know, it's a lunch, catching up, how ya doing -- all that stuff. I'm telling him about the baby, and about Susan being pregnant again, and how I'm not getting any sleep, and he says: Oh yes, I remember those days. These days it's not babies that make lose sleep at night. It's getting up to pee three times a night! So I say to him: You know, Giovanni -- his parents were Italian -- I can fix that. Snip, snip, boom. Problem solved. You sleep through the night.
+--- Snip snip, boom?
+--- He says: I've read the literature, and incontinence is not an unusual outcome. Something like 30%. So I say to him: _Maestro_, would I let that happen to you?
+--- Lemme guess.
+--- Yup. Everything looked good at first. Some post-surgical incontinence is to be expected. We used to joke about it during his followups. "You know, Lane, if I'm still wetting the bed in October, I'm pulling your license."
+--- What happened?
+--- He became incontinent.
+--- No!
+--- He couldn't control his peeing.
+--- You broke his dick!
+--- Pretty much. At first I was all "These things happen" and, y'know, "probability." Those follow up appointments got harder and harder.
+--- Whoa!
+--- The worst part was when he said: The objective was to let the patient sleep through the night without his waking up to urinate. You succeeded: I don't wake up to urinate. In fact, I don't know I’m urinating even when I'm awake.
+--- Wow.
+--- That’s when I lost it.
+--- Your license?
+--- I wish! The guy just wanted to sleep through the night, and I fucked that up. I never wanted to be responsible for something like that again. So, I got a new job.
+--- Wow. I have to go take a leak. I'll be thinking about this the whole time.
+--- Another beer for when you come back?
+--- You bet!

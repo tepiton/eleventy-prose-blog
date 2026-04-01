@@ -1,0 +1,1016 @@
+/* =======================================================
+   VARIABLES DEFINITIONS
+   ======================================================= */
+:root {
+  /* Typography */
+  --font-family-serif: p22-stickley-pro-text, Georgia, serif;
+  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console,
+    Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono,
+    Nimbus Mono L, Courier New, Courier, monospace;
+  --font-sans-serif: neue-kabel, 'Helvetica Neue', Helvetica, sans-serif;
+  --sans-serif-features: "onum", "ss04", "xs06", "ss08", "ss11", "xs14";
+  --syntax-tab-size: 2;
+
+  /* Theme Colors - Light (default) */
+  --light-gray-20: #e0e0e0;
+  --light-gray-50: #C0C0C0;
+  --light-gray-90: #333;
+  --light-background: #e6e6e6;
+  --light-text: var(--light-gray-90);
+  --light-link: #082840;
+  --light-link-active: #5f2b48;
+  --light-link-visited: #17050F;
+  --light-heading: #B92929;
+  --light-table-even: #c8c5c5;
+
+  /* Theme Colors - Dark */
+  --dark-gray-20: #e0e0e0;
+  --dark-gray-50: #666;
+  --dark-gray-90: #dad8d8;
+  --dark-background: #1a1d23;
+  --dark-text: var(--dark-gray-90);
+  --dark-link: #B92929;
+  --dark-link-active: #B92929;
+  --dark-link-visited: #B92929;
+  --dark-heading: #B92929;
+  --dark-table-even: #2a2f36;
+
+  /* Active Theme Variables (defaults to light) */
+  --color-gray-20: var(--light-gray-20);
+  --color-gray-50: var(--light-gray-50);
+  --color-gray-90: var(--light-gray-90);
+  --background-color: var(--light-background);
+  --text-color: var(--light-text);
+  --text-color-link: var(--light-link);
+  --text-color-link-active: var(--light-link-active);
+  --text-color-link-visited: var(--light-link-visited);
+  --color-heading: var(--light-heading);
+  --table-even-background: var(--light-table-even);
+}
+
+/* =======================================================
+   THEME SWITCHING
+   ======================================================= */
+/* System preference for dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-20: var(--dark-gray-20);
+    --color-gray-50: var(--dark-gray-50);
+    --color-gray-90: var(--dark-gray-90);
+    --background-color: var(--dark-background);
+    --text-color: var(--dark-text);
+    --text-color-link: var(--dark-link);
+    --text-color-link-active: var(--dark-link-active);
+    --text-color-link-visited: var(--dark-link-visited);
+    --color-heading: var(--dark-heading);
+    --table-even-background: var(--dark-table-even);
+  }
+}
+
+/* User preference overrides (highest specificity) */
+html[data-force-theme="light"],
+body.light-mode {
+  --color-gray-20: var(--light-gray-20);
+  --color-gray-50: var(--light-gray-50);
+  --color-gray-90: var(--light-gray-90);
+  --background-color: var(--light-background);
+  --text-color: var(--light-text);
+  --text-color-link: var(--light-link);
+  --text-color-link-active: var(--light-link-active);
+  --text-color-link-visited: var(--light-link-visited);
+  --color-heading: var(--light-heading);
+  --table-even-background: var(--light-table-even);
+}
+
+html[data-force-theme="dark"],
+body.dark-mode {
+  --color-gray-20: var(--dark-gray-20);
+  --color-gray-50: var(--dark-gray-50);
+  --color-gray-90: var(--dark-gray-90);
+  --background-color: var(--dark-background);
+  --text-color: var(--dark-text);
+  --text-color-link: var(--dark-link);
+  --text-color-link-active: var(--dark-link-active);
+  --text-color-link-visited: var(--dark-link-visited);
+  --color-heading: var(--dark-heading);
+  --table-even-background: var(--dark-table-even);
+}
+
+/* =======================================================
+   GLOBAL STYLES
+   ======================================================= */
+* {
+  box-sizing: border-box;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+html {
+  /* Simplified fluid typography */
+  font-size: clamp(15px, 0.815rem + 1vw, 24px);
+  overflow-y: scroll;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0 auto;
+  font-family: var(--font-family-serif);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+body {
+  width: 54ch;
+  max-width: 100%;
+  font-size: 1em;
+}
+
+/* =======================================================
+   TYPOGRAPHY
+   ======================================================= */
+h1, h2, h3, h4 {
+  font-family: var(--font-sans-serif);
+  font-weight: 700;
+  font-feature-settings: var(--sans-serif-features);
+  color: var(--color-heading);
+  margin-bottom: 0.15em;
+}
+
+p, li {
+  line-height: 1.5;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+.sans-serif {
+  font-family: var(--font-sans-serif);
+  font-feature-settings: var(--sans-serif-features);
+}
+
+.small-caps {
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+/* =======================================================
+   ACCESSIBILITY
+   ======================================================= */
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+#skip-link {
+  text-decoration: none;
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray-90);
+  border-radius: 2px;
+
+  &.visually-hidden:focus {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    /* Ensure it is positioned on top of everything else when it is shown */
+    z-index: 999;
+  }
+}
+
+/* =======================================================
+   MEDIA
+   ======================================================= */
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img {
+  max-width: 100%;
+
+  &[width][height] {
+    height: auto;
+  }
+
+  &[src$=".svg"] {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+}
+
+video,
+iframe {
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  aspect-ratio: 16/9;
+}
+
+/* =======================================================
+   LINKS
+   ======================================================= */
+a[href] {
+  color: var(--text-color-link);
+  text-decoration-skip: ink;
+  text-underline-offset: 1px;
+  text-decoration-thickness: 1px;
+
+  &:visited {
+    color: var(--text-color-link-visited);
+  }
+
+  &:hover,
+  &:active {
+    color: var(--text-color-link-active);
+  }
+}
+
+/* =======================================================
+   LAYOUT
+   ======================================================= */
+main,
+footer {
+  padding: 1rem;
+  hyphens: auto;
+}
+
+main :first-child {
+  margin-top: 0;
+}
+
+header {
+  border-bottom: 1px dashed var(--color-gray-20);
+  font-family: var(--font-sans-serif);
+  font-size: .75em;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  font-feature-settings: var(--sans-serif-features);
+}
+
+.home-link {
+  flex-grow: 1;
+  font-size: 1.5em;
+  font-weight: 700;
+
+  &:link:not(:hover) {
+    text-decoration: none;
+  }
+}
+
+/* =======================================================
+   NAVIGATION
+   ======================================================= */
+.nav {
+  display: flex;
+  gap: .5em 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+
+  & a[href]:not(:hover) {
+    text-decoration: none;
+  }
+}
+
+.nav a[href][aria-current="page"] {
+  text-decoration: underline;
+}
+
+.links-nextprev {
+  display: flex;
+  justify-content: space-between;
+  gap: .5em 1em;
+  list-style: "";
+  border-top: 1px dashed var(--color-gray-20);
+  padding: 1em 0;
+  font-family: var(--font-sans-serif);
+  font-size: 0.85em;
+  font-weight: 600;
+  font-feature-settings: var(--sans-serif-features);
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  & a[href],
+  & a[href]:visited,
+  & a[href]:hover,
+  & a[href]:active {
+    text-decoration: none;
+  }
+}
+
+.links-nextprev-next {
+  text-align: right;
+}
+
+/* =======================================================
+   TABLES
+   ======================================================= */
+table {
+  margin: 1em 0;
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+
+  & td,
+  & th {
+    padding-right: 1em;
+    vertical-align: top;
+    padding: 0.25em 0.375em;
+  }
+
+  & thead {
+    color: inherit;
+    font-weight: 700;
+    font-size: inherit;
+    font-family: var(--font-sans-serif);
+    border-bottom: 1px solid var(--color-gray-50);
+    font-feature-settings: var(--sans-serif-features);
+  }
+
+  & tbody tr:nth-child(even) {
+    background-color: var(--table-even-background);
+  }
+}
+
+tr {
+  hyphens: none;
+}
+
+/* =======================================================
+   MONOSPACE / CODE
+   ======================================================= */
+pre,
+code {
+  font-family: var(--font-family-monospace);
+}
+
+pre:not([class*="language-"]) {
+  margin: .5em 0;
+  line-height: 1.375; /* 22px /16 */
+  -moz-tab-size: var(--syntax-tab-size);
+  -o-tab-size: var(--syntax-tab-size);
+  tab-size: var(--syntax-tab-size);
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-x: auto;
+}
+
+code {
+  word-break: keep-all;
+}
+
+/* naked code in other text */
+
+code:not([class]) {
+  font-size: .75em;
+}
+
+/* for naked <code> */
+pre:not([class]) code:not([class]) {
+  background-color: inherit;
+  border: 0;
+  font-size: inherit;
+}
+
+/* Prism.js code blocks - increased specificity to override theme
+   Official Documentation:
+   - https://prismjs.com/ - Basic customization info
+   - https://css-tricks.com/syntax-highlighting-prism-on-a-next-js-site/ - Detailed styling examples
+   - https://github.com/PrismJS/prism-themes - Additional theme examples */
+pre[class*="language-"] {
+  font-size: inherit !important;
+  line-height: 1.2 !important;
+  margin: 0.5em 0;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+pre[class*="language-"] code {
+  font-family: var(--font-family-monospace) !important;
+  font-size: .75em !important;
+  line-height: 1.2 !important;
+}
+
+/* Additional specificity for stubborn Prism themes */
+code[class*="language-"] {
+  font-family: var(--font-family-monospace) !important;
+}
+
+
+/* =======================================================
+   POSTS LIST - Three-line layout
+   ======================================================= */
+.postlist {
+  counter-reset: start-from var(--postlist-index);
+  list-style: none;
+  padding: 0;
+  padding-left: 1.5rem;
+}
+
+.postlist-item {
+  font-family: var(--font-sans-serif);
+  counter-increment: start-from -1;
+  margin-bottom: 0.75em;
+  font-feature-settings: var(--sans-serif-features);
+  position: relative;
+
+  &:before {
+    display: inline-block;
+    pointer-events: none;
+    content: "" counter(start-from, decimal-leading-zero) ". ";
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+    font-size: 0.8125em; /* 13px /16 */
+    color: var(--color-gray-90);
+    line-height: 1.4;
+  }
+}
+
+.postlist-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.postlist-title {
+  margin: 0;
+  font-size: 1.1875em; /* 19px /16 */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.postlist-link {
+  text-underline-position: from-font;
+  text-underline-offset: 0;
+  text-decoration-thickness: 1px;
+  color: var(--text-color-link);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: var(--text-color-link-visited);
+  }
+}
+
+.postlist-item-active .postlist-link {
+  font-weight: bold;
+}
+
+.postlist-date {
+  font-size: 0.65em; /* 13px /16 */
+  color: var(--color-gray-90);
+  margin: 0;
+  margin-top: .25em;
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-feature-settings: normal;
+}
+
+.postlist-description {
+  font-size: 0.75em;
+  color: var(--color-gray-90);
+  max-width: 48ch;
+  margin: 0;
+  line-height: 1.4;
+  font-family: var(--font-family-serif);
+  font-feature-settings: normal;
+  font-style: normal;
+  hyphens: none;
+}
+
+/* =======================================================
+   TAGS
+   ======================================================= */
+/* FIXME: Tag contrast issue - red links on dark background have poor readability
+   Current problem: a[href] selector (line ~221) overrides tag colors with red theme colors
+   Need to resolve CSS specificity to use proper text colors instead of link colors
+   Tags should use --text-color in both light/dark themes, not --text-color-link
+   Left off: attempted a[href].post-tag override but specificity/cascade issues remain */
+a[href].post-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: lowercase;
+  font-family: var(--font-family-monospace);
+  font-size: .6em;
+  text-decoration: none;
+  border: 1px solid var(--color-gray-50);
+  border-radius: 0.5em;
+  padding: 0.3em 0.3em;
+  margin: 0.1em 0.3em;
+  transition: border-color 0.2s ease;
+  color: var(--text-color);
+}
+
+/* Dark theme tag contrast fix */
+html[data-force-theme="dark"] a[href].post-tag,
+body.dark-mode a[href].post-tag {
+  color: #fff;
+}
+
+/* Tags list */
+.post-metadata {
+  font-size: 0.8125em;
+  font-family: var(--font-family-serif);
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & time {
+    margin-right: 1em;
+  }
+}
+
+/* =======================================================
+   FOOTER
+   ======================================================= */
+footer {
+  font-family: var(--font-sans-serif);
+  font-size: .5em;
+  font-style: italic;
+  color: var(--color-gray-50);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-feature-settings: var(--sans-serif-features);
+
+  & div {
+    max-width: 100%;
+  }
+
+  & div:nth-child(2) {
+    text-align: center;
+    flex: 1;
+  }
+
+  & div:nth-child(3) {
+    text-align: right;
+  }
+}
+
+@media (max-width: 640px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25em;
+
+    & div:nth-child(2),
+    & div:nth-child(3) {
+      text-align: center;
+      flex: none;
+    }
+  }
+}
+
+/* =======================================================
+   FOOTNOTES
+   ======================================================= */
+.footnote-ref {
+  font-family: sans-serif;
+  font-size: 0.6em;
+}
+
+sup.footnote-ref a[href] {
+  text-decoration: none;
+  text-decoration-color: red;
+}
+
+/* Two-column balanced footnotes */
+.footnotes {
+  column-count: 2;          /* Split into two columns */
+  column-gap: 2em;          /* Space between columns */
+  column-fill: balance;     /* Balance content between columns */
+  margin-top: 2em;          /* Space above footnotes section */
+  padding-top: 1em;         /* Padding at the top */
+  border-top: 1px solid var(--color-gray-90); /* Subtle divider above footnotes */
+}
+
+/* Style the footnote list */
+.footnotes-list {
+  padding-left: 1em;        /* Indent the numbers */
+  margin: 0;                /* Remove default margins */
+}
+
+ol.footnotes-list li::marker {
+  font-family: sans-serif;
+  font-size: 0.6em;
+}
+
+/* Style each footnote item */
+.footnote-item {
+  break-inside: avoid;      /* Prevent footnotes from splitting across columns */
+  margin-bottom: 0.75em;    /* Space between footnotes */
+  line-height: 1.5;         /* Better line spacing */
+  font-size: 0.8em;
+  font-weight: 200;
+}
+
+/* Style the back-reference links */
+.footnote-backref {
+  text-decoration: none;
+  color: var(--color-gray-50);
+  margin-left: 0.5em;
+  font-size: .75em;
+
+  &:hover {
+    color: var(--text-color-link-active);
+  }
+}
+
+/* =======================================================
+   FOOTNOTE POPOVERS (CSS-FIRST APPROACH)
+   ======================================================= */
+.footnote-ref-wrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.footnote-popover {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  
+  /* Ensure it doesn't interfere with text flow */
+  white-space: normal;
+  
+  /* Base styling */
+  background: var(--background-color);
+  border: 1px solid var(--color-gray-20);
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 250px;
+  max-width: 400px;
+  
+  /* Typography */
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-color);
+  
+  /* Shadow for depth */
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  /* Hidden by default - completely removed from layout */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  
+  /* Smooth transitions */
+  transition: 
+    opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+  
+  /* Arrow pointing down (default - only when NOT arrow-up) */
+  &:not(.arrow-up)::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: var(--background-color);
+  }
+  
+  /* Arrow border pointing down (default - only when NOT arrow-up) */
+  &:not(.arrow-up)::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 9px solid transparent;
+    border-top-color: var(--color-gray-20);
+    margin-left: -1px;
+  }
+  
+  /* Arrow pointing up (only when arrow-up class is present) */
+  &.arrow-up::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-bottom-color: var(--background-color);
+  }
+  
+  /* Arrow border pointing up (only when arrow-up class is present) */
+  &.arrow-up::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 9px solid transparent;
+    border-bottom-color: var(--color-gray-20);
+    z-index: -1;
+  }
+}
+
+/* Show popover when target is active */
+.footnote-ref-wrapper:target .footnote-popover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+/* Enhanced footnote reference styling */
+.footnote-ref-wrapper .footnote-ref {
+  position: relative;
+  z-index: 1001;
+  
+  &:hover {
+    background: var(--color-gray-10);
+    border-radius: 3px;
+    padding: 1px 2px;
+  }
+}
+
+/* Close button styling */
+.footnote-popover-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 24px;
+  height: 24px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  
+  font-size: 18px;
+  line-height: 1;
+  color: var(--color-gray-50);
+  text-decoration: none;
+  
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: var(--color-gray-10);
+    color: var(--text-color);
+  }
+}
+
+/* Responsive positioning for mobile */
+@media (max-width: 640px) {
+  .footnote-popover {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    top: auto;
+    transform: none;
+    max-width: none;
+    min-width: auto;
+    
+    /* Different animation for mobile */
+    transform: translateY(100%);
+    
+    &::after,
+    &::before {
+      display: none; /* Hide arrow on mobile */
+    }
+  }
+  
+  .footnote-ref-wrapper:target .footnote-popover {
+    transform: translateY(0);
+  }
+}
+
+/* Dark theme adjustments */
+html[data-force-theme="dark"] .footnote-popover,
+body.dark-mode .footnote-popover {
+  border-color: var(--dark-gray-20);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+    
+  &::after {
+    border-top-color: var(--dark-background);
+  }
+  
+  &::before {
+    border-top-color: var(--dark-gray-20);
+  }
+}
+
+/* =======================================================
+   MEDIA QUERIES
+   ======================================================= */
+@media (max-width: 767px) {
+  .footnotes {
+    column-count: 1;        /* Switch to single column on small screens */
+  }
+}
+
+/* iPhone and mobile optimization */
+@media (max-width: 480px) {
+  html {
+    font-size: clamp(12px, 0.65rem + 0.7vw, 15px);
+  }
+  
+  body {
+    font-weight: 300;
+  }
+  
+  h1, h2, h3, h4 {
+    font-weight: 600;
+  }
+  
+  p, li {
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  
+  ul, ol {
+    margin: 0.5em 0;
+    padding-left: 1.2em;
+  }
+  
+  blockquote {
+    margin: 0.5em 0;
+    padding-left: 1em;
+    border-left: 2px solid var(--color-gray-50);
+  }
+  
+  /* Mermaid diagrams - scale to fit mobile width */
+  .mermaid {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  
+  .mermaid svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Smaller Prism code blocks on mobile */
+  pre[class*="language-"] code {
+    font-size: .65em !important;
+  }
+}
+
+/* =======================================================
+   THEME SWITCHER
+   ======================================================= */
+.theme-switcher {
+  position: relative;
+  margin-left: auto;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 0.2em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  width: 1.6em;
+  height: 1.6em;
+  color: var(--color-heading);
+}
+
+html[data-force-theme="dark"] .theme-toggle,
+body.dark-mode .theme-toggle {
+  border-color: transparent;
+  color: var(--color-heading);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-gray-20);
+  border-color: var(--color-gray-50);
+}
+
+.theme-options {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: var(--background-color);
+  border: 1px solid var(--color-gray-50);
+  border-radius: 0.4em;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 10;
+  min-width: 8em;
+  margin-top: 0.4em;
+  font-family: var(--font-sans-serif);
+  font-feature-settings: var(--sans-serif-features);
+}
+
+html[data-force-theme="dark"] .theme-options,
+body.dark-mode .theme-options {
+  border-color: var(--color-gray-50);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.theme-options.show {
+  display: flex;
+}
+
+.theme-option {
+  padding: 0.4em 0.8em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.85em;
+}
+
+.theme-option:hover {
+  background-color: var(--color-gray-20);
+}
+
+.theme-option:first-child {
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.theme-option:last-child {
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+.theme-option-icon {
+  margin-right: 0.8em;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+html[data-force-theme="dark"] .theme-option-icon,
+body.dark-mode .theme-option-icon {
+  opacity: 1;
+  color: var(--text-color);
+}
+
+@media (max-width: 640px) {
+  .theme-switcher {
+    margin-left: 0;
+    position: relative;
+  }
+
+  .theme-options {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.4em);
+    margin: 0;
+    min-width: 7.5em;
+    border-radius: 0.4em;
+  }
+}
+

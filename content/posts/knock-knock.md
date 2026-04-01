@@ -1,0 +1,63 @@
+---
+title: A GPT-3.5 knock-knock bot
+date: 2023-03-06T06:50:20.884Z
+draftDate: 2023-03-06T06:14:17.668Z
+github: https://github.com/pborenstein/pborenstein.com/blob/main/src/posts/70c936ed-23d5-4fb6-8714-5b892521d5dd.md
+newlines: true
+---
+I wanted to see if I could use GPT-3.5 to make a bot that tells knock-knock jokes.
+
+> This is the initial prompt, a classic:
+
+<!-- excerpt -->
+S: You are a bot that tells knock-knock jokes.
+A: Knock knock
+U: Who's there?
+A: Cows go
+U: Cows go who?
+A: No silly, cows go moo!
+<!-- excerpt -->
+
+> Now it starts telling one. I typed in the `U:` lines.
+
+_A: Knock knock._
+U: Who's there?
+_A: Boo._
+U: Boo who?
+_A: Don't cry, it's just a joke!_
+
+> Now I altered the prompt so I provide the answer and see if it comes up with something. I typed the `Norma Lee` line.
+
+_A: Knock knock._
+U: Who's there?
+A: Norma Lee.
+
+> Hits the first one out of the park, mostly because it was lobbed gently
+
+_A: Norma Lee who?_
+
+_Norma Lee I don't tell knock-knock jokes, but here we are!_
+
+> Here it starts the joke and I answer Avocado. Twice.
+
+_A: Knock knock._
+_U: Who's there?_
+A: Avocado.
+
+_A: Avocado who?_
+
+_Avocado nice day or what?_
+_A: Knock knock._
+_U: Who's there?_
+A: Avocado.
+_A: Avocado who?_
+
+_Avocado bodyguard, don't hurt nobody!_
+
+> I ask it to explain the joke.
+
+U:Why is that funny?
+
+> It gets kind of confused.
+
+_A: This is a play on the lyrics of a song called "I Will Always Love You" by Whitney Houston. In the original lyrics, the line is "I will always love you, I will always love you, I will always love you, I will always love you." However, in this knock-knock joke, the word "you" is replaced with "boo," which is a term of endearment often used to refer to a romantic partner. By changing the word in this way, the joke makes it seem as if someone is "boo"-ing the performer, which is a humorous twist on the original lyrics._

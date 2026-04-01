@@ -13,7 +13,7 @@
 	/* Light theme (default) */
 	--color-bg: #e6e6e6;
 	--color-text: #333;
-	--color-muted: #888;
+	--color-muted: #777;
 	--color-heading: #B92929;
 	--color-link: #082840;
 	--color-link-hover: #5f2b48;
@@ -21,7 +21,7 @@
 	--color-border: #c8c5c5;
 	--color-code-bg: rgba(0, 0, 0, 0.06);
 	--color-table-stripe: rgba(0, 0, 0, 0.04);
-	--measure: min(90%, 40rem);
+	--measure: min(90%, 60ch);
 
 	--syntax-tab-size: 2;
 }
@@ -31,7 +31,7 @@
 	:root {
 		--color-bg: #1a1d23;
 		--color-text: #dad8d8;
-		--color-muted: #666;
+		--color-muted: #aaa;
 		--color-heading: #B92929;
 		--color-link: #B92929;
 		--color-link-hover: #B92929;
@@ -47,7 +47,7 @@ html[data-force-theme="light"],
 body.light-mode {
 	--color-bg: #e6e6e6;
 	--color-text: #333;
-	--color-muted: #888;
+	--color-muted: #777;
 	--color-heading: #B92929;
 	--color-link: #082840;
 	--color-link-hover: #5f2b48;
@@ -61,7 +61,7 @@ html[data-force-theme="dark"],
 body.dark-mode {
 	--color-bg: #1a1d23;
 	--color-text: #dad8d8;
-	--color-muted: #666;
+	--color-muted: #aaa;
 	--color-heading: #B92929;
 	--color-link: #B92929;
 	--color-link-hover: #B92929;

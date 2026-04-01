@@ -43,7 +43,12 @@ See: `chronicles/phase-0-baseline.md`
 - DEC-003: Metadata moved to `content/_data/` — matches template family convention
 - DEC-004: No mermaid — prose blog does not need diagram support
 
+### Open items
+
+- [x] **1.7** Tune --color-muted for contrast: #777 light / #aaa dark
+- [x] **1.8** Set measure to min(90%, 60ch) for prose reading width
+
 ### What's next
 
-- Visual verify in browser
-- Design polish: nav footer, site footer, background, typography (matching .dev refinements)
+- Visual verify remaining design details
+- Typography polish (line-height, heading sizes, blockquote treatment)

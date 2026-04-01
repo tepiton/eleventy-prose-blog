@@ -1,31 +1,29 @@
 ---
 phase: 1
 updated: 2026-03-31
-last_commit: 9ab25dd
+last_commit: 4d3a20c
 ---
 
 # Current Focus
 
-Template family alignment complete. Build passes (67 files clean).
+Design polish: muted text contrast, measure for prose reading.
 
 ## Active Tasks
 
-- [x] Move metadata to content/_data/
-- [x] Fix eleventy.config.js (data dir, breaks: false)
-- [x] Rebuild CSS with unified variable names + Typekit font vars
-- [x] Update base.njk (font loading comment block, footer, footnote-interactions.js)
-- [x] Add --port=8089 to package.json
-- [x] Verify build passes
-- [x] Set up docs/ tracking system
+- [x] Template family alignment (metadata, config, CSS, base.njk)
+- [x] Restore original color scheme (red headings, navy links)
+- [x] Restore breaks: true
+- [x] Tune --color-muted: #777 light / #aaa dark
+- [x] Set measure to min(90%, 60ch)
 
 ## Context
 
-- CSS rebuilt from pborenstein.dev base, font vars swapped to Typekit (p22-stickley-pro-text body, neue-kabel heading)
-- Same color scheme as .dev: #eeede9 warm gray background, same link/muted/border colors
-- Typekit loaded with simple `<link rel="stylesheet">` tags (not async preload) under swap-ready comment
-- footnote-interactions.js moved to `<head>` (was in body)
+- Original colors retained: #B92929 headings, #082840 links light / #B92929 dark
+- --color-muted: #777 light, #aaa dark (tuned for contrast on both backgrounds)
+- measure: min(90%, 60ch) — ch-based for prose serif readability
+- breaks: true — prose content uses single linebreaks intentionally
 - No mermaid
 
 ## Next Session
 
-Visual verify in browser. Design polish to match .dev refinements.
+Visual verify remaining design details. Consider typography polish (line-height, heading sizes, blockquote treatment).

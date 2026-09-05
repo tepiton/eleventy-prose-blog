@@ -47,6 +47,7 @@ See: `chronicles/phase-0-baseline.md`
 
 - [x] **1.7** Tune --color-muted for contrast: #777 light / #aaa dark
 - [x] **1.8** Set measure to min(90%, 60ch) for prose reading width
+- [x] **1.9** De-personalize template: strip real identity from metadata.js/package.json/CLAUDE.md/about.md/docs; replace 26 personal-essay demo posts with generic welcome.md (DEC-008)
 
 ### What's next
 

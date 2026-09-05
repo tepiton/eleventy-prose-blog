@@ -47,3 +47,17 @@ Note: CSS variable names were unified (`--color-heading`, `--color-link`, etc.) 
 **Decision**: Did not add mermaid diagram support.
 
 **Why**: eleventy-prose-blog is a prose blog. Technical diagrams are not part of its content. Mermaid remains a dev-blog-specific feature of eleventy-tech-blog.
+
+---
+
+## DEC-008: Replace demo content wholesale rather than scrub identity post-by-post (2026-09-05)
+
+**Decision**: Deleted all 26 personal-essay demo posts (book reviews, personal reflections) plus a personal-diary-style page, and replaced them with one purpose-built generic post (`welcome.md`). Also stripped real name/email/domain/social handles from `metadata.js`, `package.json`, `CLAUDE.md`, and `about.md`.
+
+**Context**: This repo shipped as a fork of Philip's real personal blog, with his real identity baked into config and his real essays used as "demo content." Flagged in CONTEXT.md as a prerequisite for the mimeo template-parameterization backlog item.
+
+**Alternatives considered**: Scrub identifying details out of the existing essays and keep them as demo content.
+
+**Why not**: No generic equivalent exists for essays that are inherently personal — e.g. a Power Broker book review can't be de-identified into generic template content. Attempting to scrub them post-by-post would either gut the essays or leave revealing traces.
+
+**Consequences**: Template now ships with minimal generic demo content instead of rich example posts. `welcome.md` was written to still demonstrate a real feature of this template (intentional single-linebreak handling under `breaks: true`) rather than being pure boilerplate. Same treatment applied in parallel to eleventy-tech-blog (10 personal posts removed, 4 generic git/eleventy tutorial posts kept).

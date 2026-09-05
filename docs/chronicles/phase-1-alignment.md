@@ -40,3 +40,15 @@
 **How**: Directory rename; README rewritten following the pattern of the other eleventy- template READMEs (quick start, customization, structure, npm scripts, features, deploy).
 
 **Files**: `README.md`
+
+---
+
+## Entry 4 — De-personalization pass — 2026-09-05
+
+**What**: Deleted 26 personal-essay demo posts and a personal-diary-style page; added generic `welcome.md`. Stripped Philip's real name/email/domain/social handles from `metadata.js`, `package.json`, `CLAUDE.md`, `about.md`.
+
+**Why**: Prerequisite for mimeo template-parameterization backlog item — this repo shipped as a fork of a real personal blog with real identity and real essays baked in as demo content. See DEC-008.
+
+**How**: Applied in parallel to eleventy-tech-blog in another session. Verified `npm run build` clean before committing. `welcome.md` written to demonstrate `breaks: true` intentional-linebreak behavior rather than pure boilerplate.
+
+**Files**: commit `3f10470` (de-personalization), `988a399` (CONTEXT.md update)

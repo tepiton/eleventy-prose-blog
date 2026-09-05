@@ -2,13 +2,13 @@
 
 ## Entry 1 — Initial alignment — 2026-03-31
 
-**What**: Aligned pborenstein.com with template family conventions established in pborenstein.dev.
+**What**: Aligned eleventy-prose-blog with template family conventions established in eleventy-tech-blog.
 
 **Why**: Both sites are members of the same template family. Unified structure makes font swaps and cross-site CSS changes trivial.
 
 **How**:
 - Moved metadata to `content/_data/`
-- Rebuilt CSS from pborenstein.dev base with Typekit font variables
+- Rebuilt CSS from eleventy-tech-blog base with Typekit font variables
 - Unified CSS variable naming (`--color-bg`, `--color-text`, `--font-body`, etc.)
 - Updated base.njk: swap-ready font comment, footnote-interactions.js to head
 - Added --port=8089
@@ -33,7 +33,7 @@
 
 ## Entry 3 — Repo renamed to eleventy-prose-blog — 2026-04-01
 
-**What**: Renamed directory from `pborenstein.com` to `eleventy-prose-blog`. Rewrote README as a generic template README.
+**What**: Renamed directory from `eleventy-prose-blog` to `eleventy-prose-blog`. Rewrote README as a generic template README.
 
 **Why**: Making this a distributable template in the eleventy- family alongside eleventy-chapbook, eleventy-folio, eleventy-pamphlet, and the new eleventy-tech-blog.
 

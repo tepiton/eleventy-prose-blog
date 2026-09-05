@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is Philip Borenstein's personal blog built with Eleventy (11ty) v3.1.0. The site features:
+This is a prose-focused blog template built with Eleventy (11ty) v3.1.0. The site features:
 - Static site generation with Nunjucks templating
 - Blog posts with footnote support and syntax highlighting
 - Theme switching (light/dark/system preference)
@@ -84,7 +84,7 @@ npm run benchmark
 - **Development server**: Shows all network interfaces for device testing
 - **Font loading**: Adobe Typekit fonts (neue-kabel, p22-stickley-pro-text) loaded via `<link rel="stylesheet">` tags in `base.njk` under a `<!-- fonts: swap these links -->` comment
 - **Dev server port**: 8089 (`npm start`)
-- **CSS variables**: Uses unified naming convention (`--color-bg`, `--color-text`, `--font-body`, etc.) matching pborenstein.dev — font swap is 2 `<link>` tags + 3 CSS vars
+- **CSS variables**: Uses unified naming convention (`--color-bg`, `--color-text`, `--font-body`, etc.) matching eleventy-tech-blog — font swap is 2 `<link>` tags + 3 CSS vars
 
 ---
 

@@ -1,7 +1,7 @@
 {
-	"name": "pborenstein.com",
-	"version": "9.0.0",
-	"description": "I know a little bit about a lot of things.",
+	"name": "eleventy-prose-blog",
+	"version": "1.0.0",
+	"description": "A prose-focused blog template built with Eleventy v3.",
 	"type": "module",
 	"scripts": {
 		"build": "npx @11ty/eleventy",
@@ -11,20 +11,10 @@
 		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:pborenstein/pborenstein.2025.git"
-	},
-	"author": {
-		"name": "Philip Borenstein",
-		"email": "pborenstein@gmail.com",
-		"url": "https://pborenstein.com/"
-	},
 	"license": "MIT",
 	"engines": {
 		"node": ">=18"
 	},
-	"homepage": "https://github.com/pborenstein/pborenstein.2025",
 	"devDependencies": {
 		"@11ty/eleventy": "^3.1.0",
 		"@11ty/eleventy-img": "^7.0.0",

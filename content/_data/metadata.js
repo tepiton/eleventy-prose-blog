@@ -1,27 +1,27 @@
 export default {
 	// Site metadata
-	title: "pborenstein.com",
-	url: "https://pborenstein.com/",
+	title: "Prose Blog",
+	url: "https://example.com/",
 	language: "en",
-	description: "I know a little bit about a lot of things.",
-	tagline: "I observed all the happenings beneath the sun, and I found that all is futile and pursuit of wind.",
+	description: "A description of this site.",
+	tagline: "A tagline for this site.",
 
 	// Author information
 	author: {
-		name: "Philip Borenstein",
-		email: "pborenstein@gmail.com",
-		url: "https://pborenstein.com/about/",
+		name: "Author Name",
+		email: "author@example.com",
+		url: "https://example.com/about/",
 		social: {
-			github: "pborenstein",
-			bluesky: "@pborenstein.com"
+			github: "",
+			bluesky: ""
 		}
 	},
 
 	// Feed configuration
 	feed: {
-		subtitle: "I observed all the happenings beneath the sun...",
+		subtitle: "A tagline for this site.",
 		path: "/feed/feed.xml",
-		id: "https://pborenstein.com/",
+		id: "https://example.com/",
 		limit: 10
 	},
 

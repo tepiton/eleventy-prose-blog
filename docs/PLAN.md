@@ -1,8 +1,8 @@
-# Plan: Align pborenstein.com with eleventy template family conventions
+# Plan: Align eleventy-prose-blog with eleventy template family conventions
 
 ## Context
 
-pborenstein.com is a prose blog built on Eleventy. The template family (eleventy-chapbook, eleventy-folio, eleventy-pamphlet) has established conventions for directory structure, config patterns, font loading, CSS architecture, and data organization. The goal is to align pborenstein.com with those conventions so it feels like a coherent member of the family — and so the font swap between .dev (Google Fonts) and .com (Typekit) is trivially achieved by changing the `<link>` tags and three CSS variables.
+eleventy-prose-blog is a prose blog built on Eleventy. The template family (eleventy-chapbook, eleventy-folio, eleventy-pamphlet) has established conventions for directory structure, config patterns, font loading, CSS architecture, and data organization. The goal is to align eleventy-prose-blog with those conventions so it feels like a coherent member of the family — and so the font swap between .dev (Google Fonts) and .com (Typekit) is trivially achieved by changing the `<link>` tags and three CSS variables.
 
 Key decisions:
 
@@ -16,7 +16,7 @@ Key decisions:
 
 ## Phase 1: Template family alignment
 
-**Objective**: Match the conventions established during pborenstein.dev alignment.
+**Objective**: Match the conventions established during eleventy-tech-blog alignment.
 
 ### Tasks
 

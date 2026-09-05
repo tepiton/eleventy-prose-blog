@@ -19,13 +19,13 @@ See: `chronicles/phase-0-baseline.md`
 - Typekit fonts (neue-kabel, p22-stickley-pro-text) loaded with async preload pattern
 - Metadata at root `_data/` — not template-family-aligned
 - CSS as 1016-line file using old variable naming conventions (`--background-color`, `--text-color`, etc.)
-- Not aligned with eleventy-chapbook/folio/pamphlet/pborenstein.dev conventions
+- Not aligned with eleventy-chapbook/folio/pamphlet/eleventy-tech-blog conventions
 
 ---
 
 ## Phase 1: Template family alignment (Complete)
 
-**Objective**: Match the conventions established during pborenstein.dev alignment.
+**Objective**: Match the conventions established during eleventy-tech-blog alignment.
 
 ### Tasks
 
